@@ -1,0 +1,9 @@
+.cart_box {
+    background:gray;
+    border: 1px solid wheat;
+    border-radius: 1rem;
+    min-width: 12.5rem;
+    text-align: center;
+    color:white;
+    margin: 0.7rem 0;
+}
