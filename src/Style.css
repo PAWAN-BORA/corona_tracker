@@ -30,7 +30,10 @@ body {
 }
 .chart_box {
     display: flex;
-    width: 90%;
+    width: 96%;
+    background: white;
+    align-items: center;
+    margin-top: 1rem;
 }
 
 .form_control {

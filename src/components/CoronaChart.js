@@ -1,7 +1,7 @@
 import React from 'react';
 import {fetchDailyData} from '../api/api';
 import {Line, Bar} from 'react-chartjs-2';
-
+import {Button} from '@material-ui/core';
 export default class CoronaChart extends React.Component {
     state = {
         dailyData:[],
@@ -52,7 +52,7 @@ export default class CoronaChart extends React.Component {
             }
             graph = <Bar
                 data = {{
-                    labels:['Confirmed', 'Recorvered', 'Deaths'],
+                    labels:['Confirmed', 'Recovered', 'Deaths'],
                     datasets:[{
                         lable:"People",
                         backgroundColor:["blue", 'green', 'red'],
@@ -78,10 +78,50 @@ export default class CoronaChart extends React.Component {
                 </select>
             </div>:null
             }
-            <div className="chart_box">
+            <div className="chart_box" id="chart">
                 {graph}
             </div>
+            <Button variant="contained" color="primary" style={{margin:'0.8rem 0'}} onClick={()=>{fullScreen(document.getElementById("chart"))}}>
+                Full Screen
+            </Button>
             </>
         )
     }
+}
+
+function fullScreen(element) {
+    console.log(element);
+    let isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) 
+    if(!isInFullScreen) {
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      }  else if (element.mozRequestFullScreen) { /* Firefox */
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) { /* IE/Edge */
+        element.msRequestFullscreen();
+      }
+    };
+    // var orientation = (window.screen.orientation || {}).type || window.screen.mozOrientation || window.screen.msOrientation;
+    // console.log(orientation);
+    // if (orientation === "landscape-primary") {
+    //     console.log("That looks good.");
+    //   } else if (orientation === "landscape-secondary") {
+    //     console.log("Mmmh... the screen is upside down!");
+    //   } else if (orientation === "portrait-secondary" || orientation === "portrait-primary") {
+    //     console.log("Mmmh... you should rotate your device to landscape");
+    //   } else if (orientation === undefined) {
+    //     console.log("The orientation API isn't supported in this browser :("); 
+    //   }
+    window.screen.orientation.lock("landscape").then(()=>{
+        console.log("working");
+    }).catch((err)=>{
+        console.warn(err);
+    });
+    // if (window.self.isMobile) {
+    //     window.screen.orientation.lock('landscape').catch(function screenLockError(e) {
+    //       console.log(e);
+    //     });
+    //   }
 }

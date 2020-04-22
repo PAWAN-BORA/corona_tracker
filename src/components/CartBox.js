@@ -7,6 +7,7 @@ export default class CartBox extends React.Component {
 
     render() {
         const {data:{confirmed, recovered, deaths, lastUpdate}} = this.props;
+        // eslint-disable-next-line
         if(confirmed==undefined) {
             return(
                 <div>
