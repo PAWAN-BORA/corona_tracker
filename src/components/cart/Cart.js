@@ -28,12 +28,16 @@ export default class Cart extends React.Component {
     }
 
     render() {
-        const {data, name, style} = this.props;
+        const {data, name, style, bottomColor} = this.props;
         let num = this.setNumber(data.value);
         return(
-            <div className={cartStyle.cart_box} style={style}>
-                <h2>{name}</h2>
-                <h3>{num}</h3>
+            <div className={cartStyle.cart_box}>
+                <div className={cartStyle.name_box} style={style}>
+                    <h2>{name}</h2>
+                </div>
+                <div className={cartStyle.num_box}  style={bottomColor}>
+                    <h3>{num}</h3>
+                </div>
             </div>
         );
         

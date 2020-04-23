@@ -15,17 +15,17 @@ body {
     width: 100%;
     justify-content: space-around;
     flex-wrap: wrap;
-    background:#3c3839;
+    background:#000040;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .last_date {
     width: 100%;
     text-align: center;
-    background: blueviolet;
+    background: purple;
     color: white;
     padding: 1rem 0;
-    font-size: 1.2rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
 }
 .chart_box {

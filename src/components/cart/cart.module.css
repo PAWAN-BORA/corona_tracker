@@ -1,9 +1,35 @@
 .cart_box {
-    background:gray;
-    border: 1px solid wheat;
-    border-radius: 1rem;
     min-width: 12.5rem;
+    height: 7rem;
     text-align: center;
     color:white;
     margin: 0.7rem 0;
+    position: relative;
+}
+
+.name_box {
+    border:0.12rem solid white;
+    border-radius: 0.5rem;
+    /* padding: 0.5rem; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.name_box h2 {
+    margin: 0.6rem;
+    font-size: 1.8rem;
+}
+.num_box {
+    position: absolute;
+    bottom: 0;
+    left: 0.7rem;
+    right: 0.7rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    color: black;
+}
+.num_box h3 {
+    font-size: 1.4rem;
+    margin: 1rem;
 }
